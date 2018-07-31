@@ -2782,3 +2782,15 @@ Completed 200 OK in 79ms (Views: 13.7ms | ActiveRecord: 45.1ms)
 
 
   [1m[36mPlayer Load (2.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-07-31 11:13:36 -0400
+Processing by Api::V1::PlayersController#index as HTML
+  [1m[36mPlayer Load (19.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:8
+[active_model_serializers]   [1m[36mQuizCard Load (1.0ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:8
+[active_model_serializers]   [1m[36mQuizCard Load (0.5ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (53.84ms)
+Completed 200 OK in 174ms (Views: 81.0ms | ActiveRecord: 83.5ms)
+
+
