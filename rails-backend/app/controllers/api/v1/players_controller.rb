@@ -1,6 +1,12 @@
 module Api
 	module V1
 		class PlayersController < ApplicationController
+
+			def show
+				@player = Player.find(params[:id])
+				render json: @player, includes: ['quiz_card']
+			end
+
 			def index
 				# render json: Player.includes(:quiz_card), include: ['quiz_card']
 				@players = Player.all
@@ -17,7 +23,7 @@ module Api
 			private
 
 			def player_params
-				params.require(:player).permit(:name)
+				params.require(:player).permit(:id, :name)
 			end
 
 		end
