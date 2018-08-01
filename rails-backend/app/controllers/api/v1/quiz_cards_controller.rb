@@ -1,6 +1,11 @@
 module Api
 	module V1
 		class QuizCardsController < ApplicationController
+
+			def show
+				@quizcard = QuizCard.find(params[:id])
+				render json: @quizcard
+			end
 			def index
 				@quizcards = QuizCard.all
 				render json: @quizcards
