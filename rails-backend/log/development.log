@@ -8357,3 +8357,41 @@ Processing by Api::V1::PlayersController#index as */*
 Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-01 13:04:17 -0400
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (28.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (12.6ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.7ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.5ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.4ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.5ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (110.68ms)
+Completed 200 OK in 257ms (Views: 137.8ms | ActiveRecord: 105.1ms)
+
+
+Started GET "/api/v1/quiz_cards" for 127.0.0.1 at 2018-08-01 13:04:25 -0400
+Processing by Api::V1::QuizCardsController#index as */*
+  [1m[36mQuizCard Load (1.0ms)[0m  [1m[34mSELECT "quiz_cards".* FROM "quiz_cards"[0m
+  ↳ app/controllers/api/v1/quiz_cards_controller.rb:6
+[active_model_serializers]   [1m[36mPlayer Load (4.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:6
+[active_model_serializers]   [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:6
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:6
+[active_model_serializers]   [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:6
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (28.94ms)
+Completed 200 OK in 37ms (Views: 28.7ms | ActiveRecord: 7.7ms)
+
+
