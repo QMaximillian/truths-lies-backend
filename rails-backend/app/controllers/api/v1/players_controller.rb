@@ -20,10 +20,17 @@ module Api
 				render json: @player
 			end
 
+			def update
+				@player = Player.find(params[:id])
+				@player.high_score = player_params[:high_score]
+				@player.save
+				render json: @player
+			end
+
 			private
 
 			def player_params
-				params.require(:player).permit(:id, :name)
+				params.require(:player).permit(:id, :name, :high_score)
 			end
 
 		end

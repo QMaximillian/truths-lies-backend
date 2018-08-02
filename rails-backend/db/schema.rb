@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_172813) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
-    t.integer "highest_score"
-    t.integer "times_played"
+    t.integer "high_score", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

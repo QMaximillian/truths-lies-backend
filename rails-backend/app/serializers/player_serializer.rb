@@ -1,3 +1,3 @@
 class PlayerSerializer < ActiveModel::Serializer
- 	attributes :id, :name, :highest_score, :times_played, :quiz_card
+ 	attributes :id, :name, :high_score, :quiz_card
 end
