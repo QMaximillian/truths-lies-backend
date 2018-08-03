@@ -9,8 +9,7 @@
 polly = Player.create(name: "Quinn", high_score: 0)
 george = Player.create(name: "Chris", high_score: 0)
 fernando = Player.create(name: "Katrina", high_score: 0)
-lucinda = Player.create(name: "Ariana Grande", high_score: 0)
-sza = Player.create(name: "SZA", high_score: 0)
+
 
 a_thing = QuizCard.create(player_id: 1, option1: "Has been outside the US.", option2: "Has never broken a bone.", option3: "Currently lives in New Jersey.", false_option: 1)
 a_thing = QuizCard.create(player_id: 2, option1: "Has been working since 16.", option2: "Likes lizards.", option3: "Doesn't use the restroom.", false_option: 3)

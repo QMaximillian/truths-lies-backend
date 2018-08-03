@@ -28476,3 +28476,325 @@ Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 2.5ms)
 >>>>>>> 3bfb0a153969430d9667db927c8143743459fb7a
 
 
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:25:05 -0400
+  [1m[35m (16.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (21.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (6.57ms)
+Completed 200 OK in 87ms (Views: 28.5ms | ActiveRecord: 33.7ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:25:11 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (2.0ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.56ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:25:12 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.21ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.5ms)
+
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (17.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (177.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "truths-lies_development"[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (138.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "truths-lies_test"[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (520.8ms)[0m  [1m[35mCREATE DATABASE "truths-lies_development" ENCODING = 'unicode'[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (267.5ms)[0m  [1m[35mCREATE DATABASE "truths-lies_test" ENCODING = 'unicode'[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35mSQL (34.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (20.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "players" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (116.6ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "high_score" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "quiz_cards" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "quiz_cards" ("id" bigserial primary key, "player_id" integer, "option1" character varying, "option2" character varying, "option3" character varying, "false_option" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730172813)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730172440);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (3.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-03 13:26:13.193663"], ["updated_at", "2018-08-03 13:26:13.193663"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (3.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "players" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "high_score" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "quiz_cards" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "quiz_cards" ("id" bigserial primary key, "player_id" integer, "option1" character varying, "option2" character varying, "option3" character varying, "false_option" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730172813)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730172440);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-03 13:26:13.349744"], ["updated_at", "2018-08-03 13:26:13.349744"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (1.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-08-03 13:26:13.356970"], ["key", "environment"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPlayer Create (1.5ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Quinn"], ["created_at", "2018-08-03 13:26:13.459713"], ["updated_at", "2018-08-03 13:26:13.459713"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mPlayer Create (0.6ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Chris"], ["created_at", "2018-08-03 13:26:13.471409"], ["updated_at", "2018-08-03 13:26:13.471409"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPlayer Create (0.7ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Katrina"], ["created_at", "2018-08-03 13:26:13.476623"], ["updated_at", "2018-08-03 13:26:13.476623"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mQuizCard Create (12.8ms)[0m  [1m[32mINSERT INTO "quiz_cards" ("player_id", "option1", "option2", "option3", "false_option", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["player_id", 1], ["option1", "Has been outside the US."], ["option2", "Has never broken a bone."], ["option3", "Currently lives in New Jersey."], ["false_option", 1], ["created_at", "2018-08-03 13:26:13.559979"], ["updated_at", "2018-08-03 13:26:13.559979"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mQuizCard Create (0.6ms)[0m  [1m[32mINSERT INTO "quiz_cards" ("player_id", "option1", "option2", "option3", "false_option", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["player_id", 2], ["option1", "Has been working since 16."], ["option2", "Likes lizards."], ["option3", "Doesn't use the restroom."], ["false_option", 3], ["created_at", "2018-08-03 13:26:13.583347"], ["updated_at", "2018-08-03 13:26:13.583347"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mQuizCard Create (0.6ms)[0m  [1m[32mINSERT INTO "quiz_cards" ("player_id", "option1", "option2", "option3", "false_option", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["player_id", 3], ["option1", "Has been trapped in gondola."], ["option2", "Has 2 cats."], ["option3", "Has never been to Chicago."], ["false_option", 2], ["created_at", "2018-08-03 13:26:13.590757"], ["updated_at", "2018-08-03 13:26:13.590757"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:24 -0400
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:24 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PlayersController#index as */*
+  [1m[35m (26.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:25 -0400
+[active_model_serializers]   [1m[36mQuizCard Load (0.9ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (3.9ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (3.2ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (4.3ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (10.7ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (131.99ms)
+[active_model_serializers]   [1m[36mQuizCard Load (9.6ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 285ms (Views: 121.3ms | ActiveRecord: 145.3ms)
+
+
+Processing by Api::V1::PlayersController#index as */*
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+  [1m[36mPlayer Load (2.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (234.39ms)
+  ↳ app/controllers/api/v1/players_controller.rb:14
+Completed 200 OK in 309ms (Views: 227.2ms | ActiveRecord: 65.6ms)
+
+
+[active_model_serializers]   [1m[36mQuizCard Load (1.0ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.6ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.9ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (13.97ms)
+Completed 200 OK in 31ms (Views: 24.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:25 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (0.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.9ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (5.9ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (3.3ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (27.5ms)
+Completed 200 OK in 34ms (Views: 22.7ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/api/v1/quiz_cards" for 127.0.0.1 at 2018-08-03 09:26:32 -0400
+Processing by Api::V1::QuizCardsController#index as */*
+  [1m[36mQuizCard Load (0.8ms)[0m  [1m[34mSELECT "quiz_cards".* FROM "quiz_cards"[0m
+  ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (10.72ms)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:35 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.5ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.4ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.6ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (11.46ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:40 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (1.0ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (1.1ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.7ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (15.67ms)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/quiz_cards" for 127.0.0.1 at 2018-08-03 09:26:42 -0400
+Processing by Api::V1::QuizCardsController#index as */*
+  [1m[36mQuizCard Load (0.7ms)[0m  [1m[34mSELECT "quiz_cards".* FROM "quiz_cards"[0m
+  ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers]   [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/quiz_cards_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (11.33ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:49 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.3ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.4ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (0.4ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (18.24ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-03 09:26:52 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (1.1ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (4.3ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers]   [1m[36mQuizCard Load (2.1ms)[0m  [1m[34mSELECT  "quiz_cards".* FROM "quiz_cards" WHERE "quiz_cards"."player_id" = $1 LIMIT $2[0m  [["player_id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (23.12ms)
+Completed 200 OK in 30ms (Views: 20.3ms | ActiveRecord: 8.9ms)
+
+
