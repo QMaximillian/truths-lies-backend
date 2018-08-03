@@ -27968,3 +27968,207 @@ Processing by Api::V1::PlayersController#index as */*
 Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 2.6ms)
 
 
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:11:44 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (7.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (11.37ms)
+Completed 200 OK in 68ms (Views: 29.5ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:12:00 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.2ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.5ms)
+
+
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE DATABASE "truths-lies_development" ENCODING = 'unicode'[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "truths-lies_test" ENCODING = 'unicode'[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (146.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "truths-lies_development"[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (144.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "truths-lies_test"[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (431.6ms)[0m  [1m[35mCREATE DATABASE "truths-lies_development" ENCODING = 'unicode'[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (271.2ms)[0m  [1m[35mCREATE DATABASE "truths-lies_test" ENCODING = 'unicode'[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (65.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5791281171867509010)[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateQuizCards (20180730172440)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (34.9ms)[0m  [1m[35mCREATE TABLE "quiz_cards" ("id" bigserial primary key, "player_id" integer, "option1" character varying, "option2" character varying, "option3" character varying, "false_option" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180730172440_create_quiz_cards.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180730172440"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreatePlayers (20180730172813)
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (35.0ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "high_score" integer DEFAULT 0, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180730172813_create_players.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180730172813"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-02 22:13:07.613893"], ["updated_at", "2018-08-02 22:13:07.613893"]]
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5791281171867509010)[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/bin/rake:23
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:24 -0400
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:25 -0400
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:25 -0400
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PlayersController#index as */*
+  [1m[35m (47.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnlashinsky/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::PlayersController#index as */*
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (6.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+  [1m[36mPlayer Load (3.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  [1m[36mPlayer Load (1.7ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (3.36ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.22ms)
+Completed 200 OK in 45ms (Views: 23.5ms | ActiveRecord: 10.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.24ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 3.4ms)
+
+
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:26 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.23ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:26 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (2.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.25ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:27 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.19ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:28 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.28ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:29 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (3.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.21ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:30 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.23ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:32 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.33ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:33 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (2.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.18ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:34 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.25ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:34 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.27ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:58 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.18ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/players" for 127.0.0.1 at 2018-08-02 18:13:58 -0400
+Processing by Api::V1::PlayersController#index as */*
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  ↳ app/controllers/api/v1/players_controller.rb:14
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (0.28ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.4ms)
+
+
