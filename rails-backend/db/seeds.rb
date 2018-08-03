@@ -18,7 +18,6 @@ Player.create(name: "Stonehenge", high_score: 0)
 Player.create(name: "Queen Elizabeth", high_score: 0)
 
 
-
 QuizCard.create(player_id: 1, option1: "Has been outside the US.", option2: "Has never broken a bone.", option3: "Currently lives in New Jersey.", false_option: 1)
 QuizCard.create(player_id: 2, option1: "Has been working since 16.", option2: "Likes lizards.", option3: "Doesn't use the restroom.", false_option: 3)
 QuizCard.create(player_id: 3, option1: "Has been trapped in gondola.", option2: "Has 2 cats.", option3: "Has never been to Chicago.", false_option: 2)
